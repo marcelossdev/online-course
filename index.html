@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+	<head>
+		<title>Curso Online</title>
+		<meta charset="utf-8"/>
+
+		<meta name="description" content="Curso Online de Programação">
+		<link rel="canonical" href="https://marcelossdev.github.io/online-course/">
+
+		<!-- COR DA BARRA DO NAVEGADOR MOBILE -->
+		<meta name="theme-color" content="#0f172a">
+
+		<!-- FAVICON -->
+		<link rel="icon" href="/img/logo.ico" sizes="any">
+		<link rel="apple-touch-icon" href="/img/logo.ico">
+
+		<!-- OPEN GRAPH (WhatsApp / Facebook / Discord / LinkedIn) -->
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="Curso Danki Code">
+		<meta property="og:description" content="Curso Online de Programação">
+		<meta property="og:url" content="https://marcelossdev.github.io/online-course/">
+		<meta property="og:image" content="data:image/png;base64,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">
+		<meta property="og:image:width" content="900">
+		<meta property="og:image:height" content="900">
+
+		<!-- TWITTER PREVIEW -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="Curso Danki Code">
+		<meta name="twitter:description" content="Curso Online de Programação">
+		<meta name="twitter:image" content="data:image/png;base64,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">
+
+
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0"/>
+		<link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet" type="text/css">
+	</head>
+
+	<body>
+
+		<section class="main">
+			<div class="layer"></div>
+			<div class="center">
+				<header>
+
+					<div class="icons-social">
+						<a href="https://pt-br.facebook.com/dankicode/"><i class="fa-brands fa-facebook"></i></a>
+						<a href="https://www.instagram.com/dankicodeoficial/?hl=pt"><i class="fa-brands fa-instagram"></i></a>
+					</div><!--icons-social-->
+
+<div class="clear"></div>
+
+					<div class="logo"> 
+						<a href="index.html">Danki.Code</a>
+					</div><!--logo-->
+
+					<nav class="desktop">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="#sobre">Sobre</a></li>							
+							<li><a href="#contato">Contato</a></li>
+						</ul>
+					</nav><!--desktop-->
+
+					<nav class="mobile">
+						<i class="fa-sharp fa-solid fa-bars"></i>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="#sobre">Sobre</a></li>							
+							<li><a href="#contato">Contato</a></li>
+						</ul>
+					</nav><!--mobile-->
+
+<div class="clear"></div>					
+						
+				</header>
+
+				<div class="conteudo-header">
+					<h2>Bem-vindo(a) ao nosso website!</h2>
+					<p>Com os conhecimentos do Pacote Full-Stack Master você estará em um patamar acima. Além de dominar as tecnologias mais poderosas da atualidade, irá desenvolver outras habilidades que poucos profissionais no Brasil possuem. Os salários para profissionais com seu nível de conhecimento ultrapassam facilmente R$10.000. Ainda terá a possibilidade de abrir sua própria agência ou empresa. Você será dono(a) do próprio tempo!</p>
+					<p>Atuamos com desenvolvimento de soluções inovadoras para empresas e também formamos profissionais capacitados e completos para a área de TI.</p>
+					<a href="#contato">Saiba Mais</a>
+				</div><!--conteudo-header-->	
+				
+			</div><!--center-->
+		</section><!--main-->
+
+		<section class="planos" id="sobre">
+
+			<div class="chamada-planos">
+				<div class="center">
+					<h2>Confira nossos planos</h2>
+				</div><!--center-->
+			</div><!--chamada-planos-->
+
+			<div class="box-planos">
+				<div class="center">
+
+					<div class="box-planos-single">
+						<div class="box-planos-wraper">
+							<h2>Front-End</h2>
+							<div class="pontos-plano">
+								<p><i class="fa-solid fa-check-to-slot"></i>HTML</p>
+								<p><i class="fa-solid fa-check-to-slot"></i>CSS</p>		
+								<p><i class="fa-solid fa-check-to-slot"></i>JAVASCRIPT</p>
+								<p><i class="fa-solid fa-check-to-slot"></i>BOOTSTRAP</p>	
+							</div><!--pontos-plano-->
+							<div class="preco">
+								<h2>R$100,00</h2>
+							</div><!--preco-->	
+						</div><!--box-planos-wraper-->	
+					</div><!--box-planos-single-->
+
+					<div class="box-planos-single">
+						<div class="box-planos-wraper">
+							<h2>Back-End</h2>
+							<div class="pontos-plano">
+								<p><i class="fa-solid fa-check-to-slot"></i>OOP</p>
+								<p><i class="fa-solid fa-check-to-slot"></i>.NET</p>		
+								<p><i class="fa-solid fa-check-to-slot"></i>JAVA</p>
+								<p><i class="fa-solid fa-check-to-slot"></i>PYTHON</p>		
+							</div><!--pontos-plano-->
+							<div class="preco">
+								<h2>R$250,00</h2>
+							</div><!--preco-->
+						</div><!--box-planos-wraper-->	
+					</div><!--box-planos-single-->
+
+					<div class="box-planos-single">
+						<div class="box-planos-wraper">
+							<h2>Mobile</h2>
+							<div class="pontos-plano">
+								<p><i class="fa-solid fa-check-to-slot"></i>CYBERSECURITY</p>
+								<p><i class="fa-solid fa-check-to-slot"></i>HARDWARE E SOFTWARE</p><p><i class="fa-solid fa-check-to-slot"></i>CLOUD COMPUTING</p>
+								<p><i class="fa-solid fa-check-to-slot"></i>DEVOPS</p>		
+							</div><!--pontos-plano-->
+							<div class="preco">
+								<h2>R$300,00</h2>
+							</div><!--preco-->
+						</div><!--box-planos-wraper-->	
+					</div><!--box-planos-single-->
+
+				</div><!--center-->
+			</div><!--box-planos-->
+
+		</section><!--planos-->	
+
+		<section class="parallax">
+			<div class="overplay-parallax"></div>
+			<div class="center">
+
+				<h2>Sobre Nossa <span style="color: #2692FF;">Empresa</span></h2>
+				<p>Sediada em Florianópolis, somos uma empresa de cursos online voltados a desenvolvimento web.</p>
+				<p>Atuamos com desenvolvimento de soluções inovadoras para empresas e também formamos profissionais capacitados e completos para a área de TI.</p>
+				<br /> 	<br />	<br />	<br /> 	<br />
+
+			</div><!--center-->
+		</section><!--parallax-->
+
+		<section class="final-section" id="contato">
+			<div class="center">
+
+				<div class="w50 contato">
+					<h2><span style="border-top: 2px solid black;">Entre</span> em Contato</h2>
+
+					<form id="formulario" method="post" novalidate>
+						<input type="text" name="nome" id="nome" placeholder="Insira seu nome...">
+						<span class="error" id="nome-error"></span>
+
+						<input type="email" name="email" id="email" placeholder="Insira seu e-mail...">
+						<span class="error" id="email-error"></span>
+
+						<textarea name="mensagem" id="mensagem" placeholder="Sua mensagem..."></textarea>
+						<span class="error" id="mensagem-error"></span>
+						<br/>
+
+						<input type="submit" value="Enviar!">
+					</form>
+
+					<br/>
+
+					<div id="mensagem-sucesso" class="success">Contato enviado com sucesso!</div>
+
+				</div><!--w50 contato-->
+
+				<div class="w50 time">
+					<h2><span style="border-top: 2px solid black;">Conheça</span> Nosso Time!</h2>
+					<div class="w50 equipe-single">
+						<div class="topo-box-usuario">
+							<div class="box-avatar" style="background-image: url('./img/ceo.jpeg');"></div>
+							<div class="info-usuario">
+								<p style="font-weight: bold;">Marcelo Eduardo</p>
+								<p style="font-weight: italic;">CEO / Instrutor</p>
+							</div><!--info-usuario-->	
+						</div><!--topo-box-usuario-->
+
+						<div class="descricao-usuario-box">
+							<p>De olho na necessidade das empresas de incrementar o quadro funcional do setor de TI, o programador 
+								Marcelo Eduardo fundou em 2017 uma plataforma de cursos online voltados à programação e ao 
+								desenvolvimento de sites e aplicativos.</p>
+						</div><!--descricao-usuario-box-->	
+					</div><!--w50 equipe-single-->
+
+					<div class="w50 equipe-single">
+						<div class="topo-box-usuario">
+							<div class="box-avatar" style="background-image: url('./img/vice.jpeg');"></div>
+							<div class="info-usuario">
+								<p style="font-weight: bold;">Keiani Alves</p>
+								<p style="font-weight: italic; font-size: 15px;">Vice Coordenadora</p>
+							</div><!--info-usuario-->	
+						</div><!--topo-box-usuario-->
+
+						<div class="descricao-usuario-box">
+							<p>A fim de auxiliar na divisão de tarefas da empresa e na própria condução dos cursos, a empresária e
+							e programadora Keiani Alves juntou-se ao time Danki Code, para maior eficiência dos nossos serviços e 
+							melhor capacitação de nossos alunos.
+							</p>
+						</div><!--descricao-usuario-box-->	
+					</div><!--w50 equipe-single-->
+
+
+<div class="clear"></div>	
+
+				</div><!--w50 time-->
+
+<div class="clear"></div>						
+
+			</div><!--center-->	
+		</section><!--final-section-->
+
+		<footer>
+			<p>Todos os Direitos Reservados ao Curso Online</p>
+		</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</body>
+
+	<script src="js/jquery.js"></script>
+	<script src="js/functions.js"></script>
+	<script src="js/formulario.js"></script>
+	<script src="js/menuScroll.js"></script>
+
+
+</html>
